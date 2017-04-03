@@ -1,0 +1,2 @@
+The first one prints '3' to the screen
+The second one gives a Undefined Local Variable or Method error

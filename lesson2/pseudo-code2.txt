@@ -1,0 +1,17 @@
+Given a collection of strings.
+
+Iterate through the collection and concatenate each string onto a base string.
+Return the base string.
+
+START
+
+FUNCTION combine_strings(Array strings) {
+  SET iterator = 0
+  SET base_string = ""
+
+  WHILE iterator < length of strings Array
+    base_string = base_string + strings[iterator]
+    iterator = iterator + 1
+  
+  return base_string
+}

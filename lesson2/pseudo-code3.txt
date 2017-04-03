@@ -1,0 +1,20 @@
+Given a collection of integers
+
+Iterate through the collection
+If the number of iterations is even, add the current integer from the collection to an array
+Once finished iterating, return the array
+
+START
+
+FUNCTION every_other(Array integers) {
+  SET iterator = 1
+  SET new_array = []
+
+  WHILE iterator <= Array length
+    IF iterator is divisible by two
+      add current integer to new_array
+    iterator = iterator + 1
+    next iteration
+
+  return new_array
+}

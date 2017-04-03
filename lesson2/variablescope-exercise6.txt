@@ -1,0 +1,1 @@
+That the variable or method 'shoes' is being accessed outside of its scope, or that it's undefined

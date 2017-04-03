@@ -1,0 +1,9 @@
+Input two integers, and return the sum of those two integers
+
+START
+
+FUNCTION sum (number1, number2) {
+  return number1 + number2
+}
+
+END

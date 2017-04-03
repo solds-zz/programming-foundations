@@ -1,0 +1,46 @@
+en:
+  welcome: "Welcome to Calculator! Enter your name:"
+  valid_name: "Make sure to enter a valid name."
+  first_num: "What's the first number?"
+  second_num: "What's the second number?"
+  invalid_num: "Invalid number."
+  invalid_op: "Invalid operator."
+  another_calc: "Do you want to perform another calculation? [Yn]"
+  goodbye: "Thank you for using Calculator!"
+  adding: "Adding"
+  subtracting: "Subtracting"
+  multiplying: "Multiplying"
+  dividing: "Dividing"
+  hello: "Hello"
+  operating: "the two numbers..."
+  undefined: "Undefined"
+  result: "The result is:"
+  operator_prompt: |
+                    What operation would you like to perform?
+                      + (Add)
+                      - (Subtract)
+                      * (Multiply)
+                      / (Divide)
+es:
+  welcome: "Bienvenido a la calculadora! Entre su nombre:"
+  valid_name: "Asegúrese de entrar un nombre válido."
+  first_num: "What's the first number?"
+  second_num: "What's the second number?"
+  invalid_num: "Invalid number."
+  invalid_op: "Invalid operator."
+  another_calc: "Do you want to perform another calculation? [Yn]"
+  goodbye: "Thank you for using Calculator!"
+  adding: "Adding"
+  subtracting: "Subtracting"
+  multiplying: "Multiplying"
+  dividing: "Dividing"
+  hello: "Hola"
+  operating: "the two numbers..."
+  undefined: "Undefined"
+  result: "The result is:"
+  operator_prompt: |
+                    What operation would you like to perform?
+                      + (Add)
+                      - (Subtract)
+                      * (Multiply)
+                      / (Divide)
