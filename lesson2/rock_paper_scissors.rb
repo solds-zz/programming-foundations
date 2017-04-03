@@ -1,6 +1,6 @@
 STANDARD = %w[rock paper scissors]
 BIG_BANG_THEORY = %w[rock paper scissors lizard spock]
-THAT_70S_SHOW = %w[nuke cockroach boot]
+THAT_70S_SHOW = %w[nuke cockroach foot]
 ROUNDS = 5
 WINNING_SCORE = (ROUNDS / 2.0).ceil
 
