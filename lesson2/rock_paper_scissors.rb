@@ -1,18 +1,23 @@
-VALID_CHOICES = ['rock', 'paper', 'scissors']
+VALID_CHOICES = %w[rock paper scissors]
 
 def prompt(message)
   puts("=> #{message}")
+end
+
+def win?(first, second)
+  (first == 'rock' && second == 'scissors') ||
+  (first == 'paper' && second == 'rock') ||
+  (first == 'scissors' && second == 'paper')
 end
 
 def display_result(player, computer)
   puts
   prompt("You chose: #{player}")
   prompt("Computer chose: #{computer}")
-  if (player == 'rock' && computer == 'scissors') ||
-     (player == 'paper' && computer == 'rock') ||
-     (player == 'scissors' && computer == 'paper')
+
+  if win?(player, computer)
     prompt('You won!')
-  elsif (player == computer)
+  elsif player == computer
     prompt('You tied!')
   else
     prompt('You lost!')
@@ -32,10 +37,11 @@ loop do
                       prompt("That's not a valid choice.")
                     end
                   end
+
   computer_choice = VALID_CHOICES.sample
 
   display_result(player_choice, computer_choice)
-  
+
   prompt('Play again? [Yn]')
   break if gets.chomp =~ /^[Nn]/
 end
