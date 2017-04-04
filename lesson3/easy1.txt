@@ -1,0 +1,29 @@
+1. The code would print out:
+     1
+     2
+     2
+     3
+
+2. 
+   1. Not equals.
+   2. Evaluates user_name to the opposite of its boolean equivalent
+   3. Usually signifies that the method mutates the caller
+   4. Syntax error
+   5. Returns a boolean value
+   6. Evaluates user_name to a boolean
+
+3. advice.sub!('important', 'urgent')
+
+4. delete_at(n) removes the element at index 'n'
+   delete(n) removes the element 'n'
+
+5. (10..100).include?(42)
+
+6. famous_words.prepend("Four score and ")
+   famous_words = "Four score and #{famous_words}"
+
+7. 42
+
+8. flintstones.flatten!
+
+9. flintstones.assoc("Barney")

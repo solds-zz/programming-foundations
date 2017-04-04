@@ -1,0 +1,14 @@
+1. Ruby re-uses the objects when it can but uses different ones for different values.
+
+2. Same as Question 1
+
+3. My string looks like this now: pumpkins
+   My array looks like this now: ["pumpkins", "rutabaga"]
+
+4. My string looks like this now: pumpkinsrutabaga
+   My array looks like this now: ["pumpkins"]
+
+5. 
+  def color_valid(color)
+    color == "blue" || color == "green"
+  end

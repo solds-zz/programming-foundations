@@ -1,0 +1,23 @@
+1. 10.times { |n| puts "#{" " * n} The Flintstones Rock!" }
+
+2. Integers can't be concatenated to Strings.
+   puts "the value of 40 + 2 is " + (40 + 2).to_s
+   puts "the value of 40 + 2 is #{40 + 2}"
+
+3. change the loop to while dividend > 0 do
+   determines if the result has no remainder
+   line 8 returns the divisors array
+
+4. rolling_buffer1 mutates the input buffer argument whereas rolling_buffer2 does not. rolling_buffer2 also creates a new object and assigns it to the buffer variable each time the method is called.
+
+5. The limit variable is not in the same scape as the fib method. limit should be passed into the fib method.
+
+6. use the same operator for both expressions
+
+7. 34
+
+8. Yes because the Hash#[]= method is a mutating method
+
+9. "paper"
+
+10. "no"

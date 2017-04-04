@@ -1,0 +1,30 @@
+1. No "undefined method or local variable" exception is thrown because greeting has a value of nil.
+
+2. {:a=>"hi there"} is printed to the screen
+
+3. 
+   A) one is: one
+      two is: two
+      three is: three
+  
+   B) one is: one
+      two is: two
+      three is: three
+
+   C) one is: two
+      two is: three
+      three is: one
+
+4. 
+  def dot_separated_ip_address?(input_string)
+    dot_separated_words = input_string.split(".")
+    valid_address = dot_separated_words.size == 4
+  
+    if valid_address
+      valid_address = !dot_separated_words.any? do |word| 
+        !is_an_ip_number?(word)
+      end
+    end
+  
+    valid_address
+  end
