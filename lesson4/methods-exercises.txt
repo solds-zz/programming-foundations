@@ -1,0 +1,19 @@
+1. [1, 2, 3] because 'hi' evaluates to true.
+
+2. It counts the number of times that the block returns true for each element. Consult the documentation.
+
+3. [1, 2, 3] because puts num returns nil.
+
+4. { 'a' => 'ant', 'b' => 'bear', 'c' => 'cat' } because hash[value[0]] adds value to the key that's the first letter of the string.
+
+5. returns [:a, "ant"]. Consult the documentation.
+
+6. 11, because it's returned when size is called on the return value of pop, which is 'caterpillar'.
+
+7. the return value of the block is the last expression within the block, which is num.odd?. it's determined by the any? method. true is returned by the method.
+
+8. non-destructively returns the first n elements from the collection. consult the documentation.
+
+9. [nil, "bear"] because map returns an array with each replaced by the return value of the block.
+
+10. the block returns nil if num > 1, otherwise it returns num.

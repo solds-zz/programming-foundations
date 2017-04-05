@@ -21,8 +21,8 @@
     valid_address = dot_separated_words.size == 4
   
     if valid_address
-      valid_address = !dot_separated_words.any? do |word| 
-        !is_an_ip_number?(word)
+      valid_address = dot_separated_words.all? do |word| 
+        is_an_ip_number?(word)
       end
     end
   
