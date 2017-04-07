@@ -1,4 +1,4 @@
-# Tic Tac Toe
+# Tic Tac Toe game by following walkthroughs
 
 IMPOSSIBLE = [1000, 250, 50, 1].freeze
 HARD = [250, 1000, -1, 1].freeze
@@ -43,6 +43,20 @@ def initialize_board
   }
 end
 
+def joinor(numbers, separator = ', ', ender = 'or ')
+  str = ""
+  numbers.each_with_index do |num, index|
+    if index == 0
+      str << num.to_s
+    elsif index < numbers.size - 1
+      str << separator << num.to_s
+    else
+      str << separator << ender << num.to_s
+    end
+  end
+  str
+end
+
 def empty_squares(board)
   board.keys.select { |num| board[num] =~ /\d+/ }
 end
@@ -51,7 +65,7 @@ def place_player_piece(board)
   square = ''
   
   loop do
-    prompt "Choose a square (#{empty_squares(board).join(', ')}):"
+    prompt "Choose a square (#{joinor(empty_squares(board))}):"
     square = gets.chomp.to_i
 
     break if empty_squares(board).include?(square)
@@ -62,7 +76,11 @@ def place_player_piece(board)
 end
 
 def place_computer_piece(board)
-  square = find_best_square(board)
+  unless DIFFICULTY == EASY
+    square = find_best_square(board)
+  else
+    square = empty_squares(board).sample
+  end
   board[square] = COMPUTER_PIECE
 end
 
@@ -111,25 +129,34 @@ def find_best_square(board)
   weights.key(weights.values.max)
 end
 
+system 'clear'
+prompt "Welcome to Tic Tac Toe!"
+prompt "Choose your difficulty (Easy, Medium, Hard, Impossible):"
+answer = gets.chomp
+if answer =~ /^e/i
+  DIFFICULTY = EASY
+  prompt "Setting difficulty to easy..."
+elsif answer =~ /^h/i
+  DIFFICULTY = HARD
+  prompt "Setting difficulty to hard..."
+elsif answer =~ /^i/i
+  DIFFICULTY = IMPOSSIBLE
+  prompt "Setting difficulty to impossible... Good luck!"
+else
+  DIFFICULTY = MEDIUM
+  prompt "Setting difficulty to medium..."
+end
+prompt "First one to win 5 rounds is the winner!"
+prompt "Press enter to start."
+gets.chomp
+
+player_wins = 0
+computer_wins = 0
+
 loop do
-  prompt "What difficulty level? (Easy, Medium, Hard, Impossible)"
-  answer = gets.chomp
-  if answer =~ /^e/i
-    DIFFICULTY = EASY
-    prompt "Setting difficulty to easy."
-  elsif answer =~ /^h/i
-    DIFFICULTY = HARD
-    prompt "Setting difficulty to hard."
-  elsif answer =~ /^i/i
-    DIFFICULTY = IMPOSSIBLE
-    prompt "Setting difficulty to impossible. Good luck!"
-  else
-    DIFFICULTY = MEDIUM
-    prompt "Setting difficulty to medium."
-  end
+
   board = initialize_board
-  prompt "Press enter to continue..."
-  gets.chomp
+
   player_turn = true unless DIFFICULTY == IMPOSSIBLE
 
   loop do
@@ -149,11 +176,30 @@ loop do
   display_board(board)
 
   if someone_won?(board)
-    prompt "#{detect_winner(board)} won!"
+    winner = detect_winner(board)
+    prompt "#{winner} won this round!"
+    
+    if winner == 'Player'
+      player_wins += 1
+    else
+      computer_wins += 1
+    end
+
+    prompt "Player: #{player_wins}"
+    prompt "Computer: #{computer_wins}"
   else
     prompt "It's a tie!"
   end
 
+  if player_wins == 5
+    prompt "Congratulation! You won 5 times! You're a winner!"
+    player_wins = 0
+    computer_wins = 0
+  elsif computer_wins == 5
+    prompt "Uh oh! You lost 5 times! You're a loser!"
+    player_wins = 0
+    computer_wins = 0
+  end
   prompt 'Play again? (y or n)'
   answer = gets.chomp
   break if answer =~ /^n/i
