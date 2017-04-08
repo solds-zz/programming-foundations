@@ -188,7 +188,7 @@ display_rules if answer =~ /^y/i
 system 'clear'
 prompt "What is your name?"
 PLAYER_NAME = input_handler
-GOD_MODE = PLAYER_NAME =~ /^god/i
+GOD_MODE = PLAYER_NAME =~ /^godmode/i
 
 system 'clear'
 prompt "Hello, #{PLAYER_NAME}."
